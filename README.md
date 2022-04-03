@@ -7,7 +7,7 @@ For standalone web service:
 
 ```shell
 pip install -r requirements.txt
-python3 app.py
+python app.py
 ```
 
 Visit [http://localhost:5000](http://localhost:5000)
@@ -29,17 +29,19 @@ docker logs webappfaceanalysis
 ```
 ## ML Service API Check
 
-To check whether the ML Service api is working or not (in the case of using third party API )
+To check whether the ML Service api is working or not (in the case of using third party API for inferencing )
+Chnage the IP Address of the API and run
 
 ```shell
-Chnage the IP Address of the API and run
-python3  
+python3 checkMLSERVICE.py  
 ```
 
 ## Database Schema 
 
+
+
+# Create users table 
 ```shell 
-#Create users table 
 CREATE TABLE `users` (
       `id` int NOT NULL AUTO_INCREMENT,
       `name` varchar(250) NOT NULL,
@@ -50,7 +52,12 @@ CREATE TABLE `users` (
       `gender` varchar(250) NOT NULL,
        PRIMARY KEY (`id`) );
 ```
+# create table for storing admin credentials
+```shell
+CREATE TABLE `admin` (
+       `id` int NOT NULL AUTO_INCREMENT,
+       `username` varchar(50) NOT NULL,
+       `password` varchar(255) NOT NULL,
+        PRIMARY KEY (`id`));
 
 ```
-
-
