@@ -12,21 +12,7 @@ python app.py
 
 Visit [http://localhost:5000](http://localhost:5000)
 
-## Docker Container
 
-```shell
-docker build -t faceanalysiswebapp .
-docker run -d -p 5000:5000 --name webappfaceanalysis faceanalysiswebapp
-# docker stop webappfaceanalysis
-```
-
-## Logs
-
-Check logs with docker logs:
-
-```shell
-docker logs webappfaceanalysis
-```
 ## ML Service API Check
 
 To check whether the ML Service api is working or not (in the case of using third party API for inferencing )
@@ -40,7 +26,7 @@ python3 checkMLSERVICE.py
 
 
 
-# Create users table 
+### Create users table 
 ```shell 
 CREATE TABLE `users` (
       `id` int NOT NULL AUTO_INCREMENT,
@@ -52,7 +38,7 @@ CREATE TABLE `users` (
       `gender` varchar(250) NOT NULL,
        PRIMARY KEY (`id`) );
 ```
-# create table for storing admin credentials
+### Create table for storing admin credentials
 ```shell
 CREATE TABLE `admin` (
        `id` int NOT NULL AUTO_INCREMENT,
@@ -60,4 +46,19 @@ CREATE TABLE `admin` (
        `password` varchar(255) NOT NULL,
         PRIMARY KEY (`id`));
 
+```
+
+## Docker Container
+```shell
+docker build -t faceanalysiswebapp .
+docker run -d -p 5000:5000 --name webappfaceanalysis faceanalysiswebapp
+# docker stop webappfaceanalysis
+```
+
+## Logs
+
+Check logs with docker logs:
+
+```shell
+docker logs webappfaceanalysis
 ```
