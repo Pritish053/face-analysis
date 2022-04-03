@@ -5,13 +5,29 @@ flask crud with mysql and deepface as backend
 
 For standalone web service:
 
+## Installation
+
+Clone this repository 
 ```shell
+git clone https://github.com/Pritish053/face-analysis.git
+cd face-analysis/
+```
+
+Create a new pip environment
+```shell
+python3.8 -m venv env_flask
+
+#just to make sure you have updated version of pip
+pip install -U pip
+
 pip install -r requirements.txt
-python app.py
+```
+Run with flask.
+```shell
+python api.py
 ```
 
 Visit [http://localhost:5000](http://localhost:5000)
-
 
 ## ML Service API Check
 
