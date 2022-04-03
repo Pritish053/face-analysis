@@ -1,0 +1,55 @@
+{% include 'header.html' %}
+
+<br>
+<a href="{{ url_for("create") }}" class="btn btn-success">
+    New Analytic
+</a>
+<a href="{{ url_for("logout") }}" class="btn btn-danger">Logout</a>
+<br>
+<br>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid table-responsive py-5"> 
+        <table class="table table-light">
+            <thead class="thead-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Time of Analysis</th>
+                    <th>Photo</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in user_data %}
+                <tr>
+                    <td>{{user[1]}}</td>
+                    <td>{{user[2]}}</td>
+                    <td>{{user[6]}}</td>
+                    <td>{{user[5]}}</td>
+                    <td>{{user[4]}}</td>
+                    <td>
+                        <img class="thumbnail" width="75" height="75" src="uploads/{{ user[3] }}" alt="">
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" href="/edit/{{user[0]}}">Edit</a>
+                        <a class="btn btn-danger" onclick="return confirm('Do you really want to delete?')" href="/destroy/{{user[0]}}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+{% include 'footer.html' %}

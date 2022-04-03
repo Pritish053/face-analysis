@@ -1,0 +1,40 @@
+{% include 'header.html' %}
+
+{% for user in user_data %}
+
+<div class="card">
+    <div class="card-header">
+        DATA
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Information</h5>
+        <p class="card-text">
+            <form method="post" action="/update" enctype="multipart/form-data">
+                <input type="hidden" value="{{ user[0] }}" name="txtID" id="txtID">
+                <div class="form-group"> 
+                    <label for="form_name">Name:</label> 
+                    <input id="form_name" value="{{ user[1] }}" class="form-control" type="text" name="form_name"> 
+                </div>
+                <div class="form-group"> 
+                    <label for="form_email">Email:</label> 
+                    <input id="form_email" value="{{ user[2] }}" class="form-control" type="text" name="form_email"> 
+                </div>
+                <div class="form-group"> 
+                    <label for="form_photo">Photograph:</label> 
+                    <img class="img-thumbnail" width="100" src="{{url_for('uploads', nombreFoto=user[3])}}" alt="">
+                    <input id="form_photo" class="form-control" type="file" name="form_photo"> 
+                </div>
+                <div class="form-group"> 
+                    <input type="submit" class="btn btn-success" value="Change"> 
+                    <a href="{{url_for('home')}}" class="btn btn-primary">Return</a> 
+                </div>
+            </form>
+        </p>
+    </div>
+</div>
+
+{% endfor %}
+
+{% include 'footer.html' %}
+
+
