@@ -24,7 +24,7 @@ python3 checkMLSERVICE.py
 
 ## Database Schema 
 
-
+<img src="https://github.com/Pritish053/face-analysis/blob/3d9df4593bd4387595e4f2405e737d079ef3476a/Untitled.png">
 
 ### Create users table 
 ```shell 
